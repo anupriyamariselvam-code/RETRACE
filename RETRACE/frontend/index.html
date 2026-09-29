@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RETRACE | Developer Diagnostics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <main class="shell">
+    <header class="hero">
+      <div class="eyebrow">DEVELOPER DIAGNOSTICS</div>
+      <h1>RETRACE</h1>
+      <p>Follow a request through its execution stages and inspect evidence when something fails.</p>
+      <div class="status-line"><span class="status-dot"></span> Local trace workspace</div>
+    </header>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><span class="step">01</span><h2>Trace a request</h2></div>
+        <span class="hint">Submit a sample request to the local API</span>
+      </div>
+      <label for="userInput">Request input</label>
+      <textarea id="userInput" rows="3" placeholder="Example: Buy 2 laptops for Rs. 50000"></textarea>
+      <div class="actions">
+        <button id="traceButton" onclick="sendTrace()">Analyze request</button>
+        <button class="button-secondary" onclick="loadHistory()">Refresh history</button>
+      </div>
+      <div id="result" class="result hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><span class="step">02</span><h2>Trace history</h2></div>
+        <span class="hint">Select a trace to inspect its timeline</span>
+      </div>
+      <div id="history" class="history"><p class="muted">Loading trace history…</p></div>
+    </section>
+    <footer>RETRACE prototype · Diagnosis is based on recorded evidence; investigate the underlying application for confirmation.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
